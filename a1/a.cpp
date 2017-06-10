@@ -20,7 +20,8 @@ int main() {
       string text3 = "War Eagle!";
       string text4 = "Hey!";
 
-      buffer.insert(0, "(*" + user3 + "*)" + text3 + "\nHey!");
+      buffer.insert(0, "(*" + user3 + "*)" + text3 + "\n" + text4);
+
       cout << buffer << endl;
       cout << buffer.size() << endl; // 84
 
