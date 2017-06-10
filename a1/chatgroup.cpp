@@ -35,7 +35,8 @@ void messageRequest(string &buffer) {
     string user;
     string message;
     cout << "Enter user name: ";
-    getline(cin, user);    
+    //getline(cin, user);    
+    cin >> user;
     cout << "Enter message: ";
     
     bool messageComplete = false;
