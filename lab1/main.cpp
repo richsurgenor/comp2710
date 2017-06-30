@@ -1,37 +1,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Menu.h"
 
 using namespace std;
 
 int main () {
-    cout << "Hello World!";
+    MenuInteractionHandler handler;
+    Menu menu(handler);
+    menu.UIDialog();
+    menu.selectOption();
+    return 0;
 }
 
 
-class Menu {
-    public:
-    
-};
 
-class MenuInteractionHandler {
-    private:
-    string currentUser;
-    string messageBuffer;
-//    vector<User> users;
-    
-    public:
-};
-
-class User {
-    private:
-    string name;
-    vector<User> friends;
-    vector<string> followedHashTags;
-
-    public:
-    bool followHashTag(string);
-};
 
 
 
