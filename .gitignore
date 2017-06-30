@@ -1,2 +1,8 @@
 # no .out files
 *.out
+
+.idea/
+
+*/.idea
+*/cmake-build-debug
+*/CMakelists.txt

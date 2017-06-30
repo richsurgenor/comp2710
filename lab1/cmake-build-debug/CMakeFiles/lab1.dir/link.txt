@@ -1,1 +1,0 @@
-/usr/bin/g++   -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/lab1.dir/main.cpp.o CMakeFiles/lab1.dir/User.cpp.o CMakeFiles/lab1.dir/Menu.cpp.o CMakeFiles/lab1.dir/MenuInteractionHandler.cpp.o  -o lab1 
