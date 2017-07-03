@@ -1,0 +1,12 @@
+Revised Unit Test Cases:
+
+Unit Test 1: Test if User is created
+Unit Test 2: Test addFriend()
+Unit Test 3: Test postMessage()
+Unit Test 4: Test changeUser()
+Unit Test 5: Test followHashTag()
+Unit Test 6: Test getFriendNamesAsMessageHeaders()
+
+===========================================
+THESE UNIT TESTS CAN BE SEEN IN TESTS.CPP
+===========================================

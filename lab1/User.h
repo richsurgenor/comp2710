@@ -1,6 +1,9 @@
 //
 // Created by Rich Surgenor on 6/30/17.
 //
+// LAB1:        War Eagle Chat System
+// File:        User.h
+// Description: Declarations for the User class
 
 #ifndef LAB1_USER_H
 #define LAB1_USER_H
@@ -23,9 +26,9 @@ public:
     bool followHashTag(string);
     string getName() const;
     bool addFriend(User&);
-    User& getFriend(string name);
+    //User& getFriend(string name);
     vector<string> getFriendNamesAsMessageHeaders();
-    vector<string> getFollowedHashtags();
+    vector<string> getFollowedHashTags();
     bool isFriend(string name);
 };
 

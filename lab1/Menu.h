@@ -1,6 +1,9 @@
 //
 // Created by Rich Surgenor on 6/30/17.
 //
+// LAB1:        War Eagle Chat System
+// File:        Menu.h
+// Description: Declarations for the Menu class
 
 #ifndef LAB1_MENU_H
 #define LAB1_MENU_H

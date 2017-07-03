@@ -8,16 +8,15 @@ HomePage::HomePage(string& buffer, User& user) : buffer(buffer), user(user) {}
 
 // Function:        ParseBuffer
 // Description:     Fills the messages variable with relevant messages for the user's home page.
-
 void HomePage::parseBuffer() {
     size_t beginMessage;
     size_t endMessage;
     beginMessage = buffer.find("(*");
     endMessage = buffer.find("(*", beginMessage + 1);
 
-    vector<string> followedHashtags = user.getFollowedHashtags();
+    vector<string> followedHashTags = user.getFollowedHashTags();
     vector<string> acceptedValues = user.getFriendNamesAsMessageHeaders();
-    acceptedValues.insert(acceptedValues.end(), followedHashtags.begin(), followedHashtags.end());
+    acceptedValues.insert(acceptedValues.end(), followedHashTags.begin(), followedHashTags.end());
     acceptedValues.push_back("(*" + user.getName() + "*)");
 
     while (beginMessage != string::npos) {
@@ -40,6 +39,10 @@ void HomePage::parseBuffer() {
     }
 }
 
+// Function:        generateHomePage
+// Description:     uses a reverse iterator to output each message in reverse-chronological order that was selected
+//                  from the filter (only friends messages, hash tag messages, or user messages). it then prompts the
+//                  user after 2 messages if they would like to print more messages
 void HomePage::generateHomePage() {
     int count = 0;
     bool moreMessages = true;

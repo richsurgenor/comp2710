@@ -1,6 +1,9 @@
 //
 // Created by Rich Surgenor on 6/30/17.
 //
+// LAB1:        War Eagle Chat System
+// File:        Menu.cpp
+// Description: Definitions for the Menu class
 
 #include <iostream>
 #include "Menu.h"
@@ -8,6 +11,8 @@
 
 Menu::Menu(MenuInteractionHandler& menuHandlerIn) : menuHandler(menuHandlerIn), userExit(false), welcomeState(true) {}
 
+// Function:       UI
+// Description:    Invokes Menu User Interface
 void Menu::UI()
 {
     do
@@ -24,7 +29,7 @@ void Menu::UI()
         }
         else
         {
-            cout << "=================================================================================================="
+            cout << "\n=================================================================================================="
                     "======================\n";
         }
         welcomeState = false;
@@ -34,11 +39,18 @@ void Menu::UI()
     } while (!userExit);
 }
 
+// Function:        SelectOption
+// Description:     Prompts user to enter menu option
 void Menu::selectOption()
 {
     char option;
     cout << "Enter option: ";
     cin >> option;
+
+    if (menuHandler.getCurrentUserName() == "" && (option == 'p' || option == 'w' || option == 'h' || option == 'f' || option == 't')) {
+        cout << "Please log in first." << endl;
+        return;
+    }
 
     switch(option)
     {
@@ -72,6 +84,10 @@ void Menu::selectOption()
     }
 }
 
+// Function:        promptUser
+// Inputs:          string to prompt
+// Ouputs:          string of user input
+// Desription:      Prompts user with message
 string Menu::promptUser(string prompt)
 {
     string name;
@@ -80,6 +96,8 @@ string Menu::promptUser(string prompt)
     return name;
 }
 
+// Function:        createUserOption
+// Description:     create user option in UI
 void Menu::createUserOption()
 {
     if (menuHandler.createUser(promptUser("Please enter user name: "))) {
@@ -90,6 +108,8 @@ void Menu::createUserOption()
     }
 }
 
+// Function:        changeUserOption
+// Description:     changeUser option in UI
 void Menu::changeUserOption()
 {
     if (menuHandler.changeUser(promptUser("Please enter user name: ")))
@@ -101,6 +121,8 @@ void Menu::changeUserOption()
     }
 }
 
+// Function:        postMessageOption
+// Description:     post message option in UI
 void Menu::postMessageOption()
 {
     cout << "Enter message: ";
@@ -122,6 +144,8 @@ void Menu::postMessageOption()
     menuHandler.postMessage(message.substr(0, message.length()-1));
 }
 
+// Function:        addFriendOption
+// Description:     add friend option in UI
 void Menu::addFriendOption()
 {
     if (!menuHandler.addFriend(promptUser("Please enter friend's name: "))) {
@@ -129,6 +153,8 @@ void Menu::addFriendOption()
     }
 }
 
+// Function:        followHashTagOption
+// Description:     follow hash tag option in UI
 void Menu::followHashTagOption()
 {
    if (!menuHandler.getCurrentUser()->followHashTag(promptUser("Enter hashtag topic: "))) {
@@ -136,11 +162,15 @@ void Menu::followHashTagOption()
    }
 }
 
+// Function:        displayWallPageOption
+// Description:     display wall page option in UI
 void Menu::displayWallPageOption()
 {
     menuHandler.displayWallPage();
 }
 
+// Function:        displayHomePageOption
+// Description:     display home page option in UI
 void Menu::displayHomePageOption ()
 {
     cout << "==========================================================\n";

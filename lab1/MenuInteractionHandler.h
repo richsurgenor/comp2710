@@ -1,6 +1,9 @@
 //
 // Created by Rich Surgenor on 6/30/17.
 //
+// LAB1:        War Eagle Chat System
+// File:        MenuInteractionHandler.h
+// Description: Declarations for the MenuInteractionHandler class
 
 #ifndef LAB1_MENUINTERACTIONHANDLER_H
 #define LAB1_MENUINTERACTIONHANDLER_H
@@ -19,10 +22,11 @@ class MenuInteractionHandler {
     private:
     string messageBuffer;
     vector<User> users;
-    User superUser=User("");
-    User *currentUser=&superUser; //todo: make smart pointer
+    User superUser;
+    User *currentUser; //todo: make smart pointer
 
     public:
+    MenuInteractionHandler() : superUser(User("")), currentUser(&superUser) {}
     bool createUser(string name);
     bool changeUser(string name);
     bool isUser(string name);
@@ -33,6 +37,7 @@ class MenuInteractionHandler {
     bool addFriend(string);
     void displayWallPage();
     void displayHomePage();
+    string getBuffer();
 };
 
 #endif //LAB1_MENUINTERACTIONHANDLER_H

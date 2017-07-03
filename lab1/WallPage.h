@@ -1,6 +1,9 @@
 //
 // Created by Rich on 7/2/2017.
 //
+// LAB1:        War Eagle Chat System
+// File:        WallPage.h
+// Description: Declarations for the WallPage class
 
 #ifndef LAB1_WALLPAGE_H
 #define LAB1_WALLPAGE_H

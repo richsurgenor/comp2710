@@ -1,11 +1,17 @@
 //
 // Created by Rich on 7/2/2017.
 //
+// LAB1:        War Eagle Chat System
+// File:        WallPage.cpp
+// Description: Definitions for the WallPage class
 
 #include "WallPage.h"
 
 WallPage::WallPage(string& buffer, User& user) : buffer(buffer), user(user) {}
 
+// Function:        parseBuffer
+// Description:     parses entire message buffer of all messages and places them excluding the header in
+//                  the messages vector
 void WallPage::parseBuffer()
 {
     cout << "==========================================================\n";
@@ -29,6 +35,9 @@ void WallPage::parseBuffer()
         }
     }
 
+// Function:        displayWallPage
+// Description:     uses a reverse iterator to parse the messages vector backwards. Outputs each message to stdout
+//                  and after 2 messages requests user input if the user wants to output more messages
 void WallPage::displayWallPage()
 {
     int count = 0;
