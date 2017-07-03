@@ -41,6 +41,7 @@ bool MenuInteractionHandler::changeUser(string name)
     }
 
     currentUser = &user;
+    return true;
 }
 
 User& MenuInteractionHandler::getUser(string name)
