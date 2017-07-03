@@ -7,6 +7,7 @@
 
 #include<vector>
 #include<string>
+#include<algorithm>
 
 using namespace std;
 
@@ -14,11 +15,18 @@ using namespace std;
 class User {
 private:
     string name;
+    vector<User> friends;
     vector<string> followedHashTags;
 
 public:
-    bool followHashTag(string);
     User(string nameIn) : name(nameIn){};
+    bool followHashTag(string);
+    string getName() const;
+    bool addFriend(User&);
+    User& getFriend(string name);
+    vector<string> getFriendNamesAsMessageHeaders();
+    vector<string> getFollowedHashtags();
+    bool isFriend(string name);
 };
 
 

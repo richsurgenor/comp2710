@@ -12,12 +12,22 @@ using namespace std;
 
 class Menu {
 private:
-    MenuInteractionHandler menuHandler;
+    MenuInteractionHandler& menuHandler;
+    bool userExit;
+    bool welcomeState;
+    string promptUser(string);
 
 public:
-    Menu(MenuInteractionHandler menuHandlerIn) : menuHandler(menuHandlerIn) {};
-    void UIDialog();
+    Menu(MenuInteractionHandler& menuHandlerIn);
+    void UI();
     void selectOption();
+    void createUserOption();
+    void changeUserOption();
+    void postMessageOption();
+    void addFriendOption();
+    void followHashTagOption();
+    void displayWallPageOption();
+    void displayHomePageOption();
 };
 
 #endif //LAB1_MENU_H
