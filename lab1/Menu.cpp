@@ -81,6 +81,8 @@ void Menu::selectOption()
             cout << "========================================================\n";
             userExit = true;
             break;
+        default:
+            cout << "You have entered an invalid option.\n";
     }
 }
 
