@@ -127,6 +127,7 @@ bool MenuInteractionHandler::addFriend(string _friend)
 {
     concurrencyHandler.syncUsers(users, &currentUser, messageBuffer);
     User& friendUser = getUser(_friend);
+    cout << "FRIEND'S NAME: " + friendUser.getName() << endl;
     if (friendUser.getName() == "") {
         return false;
     }
