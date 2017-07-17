@@ -51,6 +51,10 @@ int ConcurrencyHandler::incrementTimeStamp()
     return timestamp;
 }
 
+// Function:        writeToFile()
+// Description:     Appends or overwrites the file
+// Inputs:          filename, what you want to append, if you are appending or overwriting
+// Outputs:         Whether or not the write was successful
 bool ConcurrencyHandler::writeToFile(string filename, string toAppend, bool append) {
     if (!doesFileExist(filename)) {
         return false;
@@ -66,28 +70,36 @@ bool ConcurrencyHandler::writeToFile(string filename, string toAppend, bool appe
     return true;
 }
 
-void ConcurrencyHandler::syncUsers(vector<User> &users, User** currentUserPtr, string& buffer)
+// Function:        syncUsers()
+// Description:     Synchronizes the system from the files
+// Inputs:          reference to the users vector, a reference pointer to the current user, the reference to buffer
+void ConcurrencyHandler::syncUsers(vector<User> &users, User*& currentUserPtr, string& buffer)
 {
     if (!doesFileExist("users.txt")) {
         return;
     }
-    User* currentUser = *currentUserPtr;
-    cout << "CURRENT USER'S NAME: " + currentUser->getName() << endl;
-    string currentUserName = currentUser->getName();
+    User currentUser = *currentUserPtr;
+    cout << "CURRENT USER'S NAME: " + currentUser.getName() << endl;
+    string currentUserName = currentUser.getName();
     vector<string> names;
     ifstream inStream;
     inStream.open("users.txt");
     if (!inStream.fail()) // simply means no users have been created yet
     {
+        int currentUserLoc = 0;
+        int i = 0;
         users.clear(); // resets user vector
         for (string line; getline(inStream, line);)
         {
-            users.push_back(User(line)); // replenish the users
+            User user = User(line);
+            users.push_back(user); // replenish the users
             if (users.back().getName() == currentUserName)
             {
-                *currentUserPtr = &users.back();
+                currentUserLoc = i;
             }
+            i++;
         }
+        currentUserPtr = &users[currentUserLoc];
         cout << "syncing friends.." << endl;
         syncFriends(users);
         cout << "syncing hashtags.." << endl;
@@ -97,8 +109,11 @@ void ConcurrencyHandler::syncUsers(vector<User> &users, User** currentUserPtr, s
         cout << "creating buffer" << endl;
         createBuffer(buffer);
     }
-   }
+}
 
+// Function:        syncFriends()
+// Description:     Syncs all users' friend lists
+// Inputs:          reference to vector of users
 void ConcurrencyHandler::syncFriends(vector<User>& users)
 {
     for (User& user : users) {
@@ -111,6 +126,9 @@ void ConcurrencyHandler::syncFriends(vector<User>& users)
     return;
 }
 
+// Function:        syncHashtags
+// Description:     Syncs all users' hashtag lists
+// Inputs:          reference to vector of strings containing hashtags user follows
 void ConcurrencyHandler::syncHashtags(vector<User>& users)
 {
     for (User& user : users) {
@@ -123,6 +141,9 @@ void ConcurrencyHandler::syncHashtags(vector<User>& users)
     return;
 }
 
+// Function:        syncPosts
+// Description:     Syncs all users' posts to the local posts array (todo: make it only append to the array instead)
+// Inputs:          Reference to vector containing users
 void ConcurrencyHandler::syncPosts(vector<User>& users)
 {
     for (User& user : users) {
@@ -155,7 +176,8 @@ void ConcurrencyHandler::syncPosts(vector<User>& users)
                 messageReady = true;
             }
         }
-        if (message != "") { // in case user had no posts
+        if (message != "")
+        { // in case user had no posts
             findAndReplace(message, "&&", "\n");
             posts[stoi(timestamp)] = "(*" + user.getName() + "*)" + message; // record the last message
         }
@@ -163,6 +185,9 @@ void ConcurrencyHandler::syncPosts(vector<User>& users)
     return;
 }
 
+// Function:        createBuffer()
+// Description:     Uses the local posts array to create the buffer from Lab1 compatible with home and wall pages
+// Inputs:          reference to the menu buffer
 void ConcurrencyHandler::createBuffer(string& buffer)
 {
     buffer.clear();

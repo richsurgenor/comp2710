@@ -31,7 +31,7 @@ public:
 
     bool writeToFile(string, string, bool append =true);
 
-    void syncUsers(vector<User>&, User** currentUserPtr, string& buffer);
+    void syncUsers(vector<User>&, User*& currentUserPtr, string& buffer);
 
     void syncFriends(vector<User>&);
 

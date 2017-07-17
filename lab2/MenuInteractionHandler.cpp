@@ -11,7 +11,7 @@ using namespace std;
 
 MenuInteractionHandler::MenuInteractionHandler() : superUser(User("")), currentUser(&superUser)
 {
-    concurrencyHandler.syncUsers(users, &currentUser, messageBuffer);
+    concurrencyHandler.syncUsers(users, currentUser, messageBuffer);
 }
 
 // Function:        createUser
@@ -125,7 +125,7 @@ void MenuInteractionHandler::postMessage(string message)
 // Description:     adds friend to user vector of friends
 bool MenuInteractionHandler::addFriend(string _friend)
 {
-    concurrencyHandler.syncUsers(users, &currentUser, messageBuffer);
+    concurrencyHandler.syncUsers(users, currentUser, messageBuffer);
     User& friendUser = getUser(_friend);
     cout << "FRIEND'S NAME: " + friendUser.getName() << endl;
     if (friendUser.getName() == "") {
@@ -142,7 +142,7 @@ bool MenuInteractionHandler::addFriend(string _friend)
 // Description:     displays user's wall page
 void MenuInteractionHandler::displayWallPage()
 {
-    concurrencyHandler.syncUsers(users, &currentUser, messageBuffer);
+    concurrencyHandler.syncUsers(users, currentUser, messageBuffer);
     WallPage page(messageBuffer, *currentUser);
     page.parseBuffer();
     page.displayWallPage();
@@ -152,13 +152,15 @@ void MenuInteractionHandler::displayWallPage()
 // Description:     displays user's home page
 void MenuInteractionHandler::displayHomePage()
 {
-    concurrencyHandler.syncUsers(users, &currentUser, messageBuffer);
+    concurrencyHandler.syncUsers(users, currentUser, messageBuffer);
     HomePage page(messageBuffer, *currentUser);
     page.parseBuffer();
     page.generateHomePage();
 }
 
-bool MenuInteractionHandler::writeUser(string name)
+// Function:        writeUser
+// Description:     Initializes a new user and creates their post, friend, and hashtag files
+void MenuInteractionHandler::writeUser(string name)
 {
     // read each text file in data directory that doesn't contain a period.
     ofstream outStream;
@@ -176,6 +178,9 @@ bool MenuInteractionHandler::writeUser(string name)
     outStream << name << endl;
 }
 
+// Function:        followHashtag
+// Description:     If the user is not already following the hashtag, follow it and write it to the user hashtag file
+// Outputs:         Whether the user is already following the hashtag
 bool MenuInteractionHandler::followHashtag(string hashtag)
 {
     if (getCurrentUser()->followHashTag(hashtag))

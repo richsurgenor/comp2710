@@ -7,7 +7,9 @@
 
 #include "User.h"
 
-
+// Function:        getName
+// Description:     Gets name of user
+// Outputs:         name of user
 string User::getName() const
 {
     return name;
@@ -25,12 +27,6 @@ bool User::addFriend(string user)
     return true;
 }
 
-// Function:        addPost
-// Inputs:          Message containing timestamp header to add to user message vector
-void User::addPost(string post)
-{
-
-}
 // Function:        getFriend
 // Inputs:          name of friend
 // Outputs:         The correct reference to your friend, unless the friend did not exist,

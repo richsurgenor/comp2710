@@ -41,7 +41,7 @@ class MenuInteractionHandler {
     bool addFriend(string);
     void displayWallPage();
     void displayHomePage();
-    bool writeUser(string name);
+    void writeUser(string name);
     bool followHashtag(string hashtag);
 };
 
