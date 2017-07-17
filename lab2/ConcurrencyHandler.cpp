@@ -79,7 +79,7 @@ void ConcurrencyHandler::syncUsers(vector<User> &users, User*& currentUserPtr, s
         return;
     }
     User currentUser = *currentUserPtr;
-    cout << "CURRENT USER'S NAME: " + currentUser.getName() << endl;
+    //cout << "CURRENT USER'S NAME: " + currentUser.getName() << endl;
     string currentUserName = currentUser.getName();
     vector<string> names;
     ifstream inStream;
@@ -100,13 +100,13 @@ void ConcurrencyHandler::syncUsers(vector<User> &users, User*& currentUserPtr, s
             i++;
         }
         currentUserPtr = &users[currentUserLoc];
-        cout << "syncing friends.." << endl;
+        //cout << "syncing friends.." << endl;
         syncFriends(users);
-        cout << "syncing hashtags.." << endl;
+        //cout << "syncing hashtags.." << endl;
         syncHashtags(users);
-        cout << "syncing posts.." << endl;
+        //cout << "syncing posts.." << endl;
         syncPosts(users);
-        cout << "creating buffer" << endl;
+        //cout << "creating buffer" << endl;
         createBuffer(buffer);
     }
 }

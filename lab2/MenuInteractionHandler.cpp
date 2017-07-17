@@ -114,9 +114,6 @@ void MenuInteractionHandler::postMessage(string message)
     concurrencyHandler.findAndReplace(post, "\n", "&&");
 
     concurrencyHandler.writeToFile(getCurrentUserName() + ".txt", post);
-
-    //messageBuffer.append("(*"+ currentUser->getName() + "*)" + message);
-
 }
 
 // Function:        addFriend
@@ -127,7 +124,7 @@ bool MenuInteractionHandler::addFriend(string _friend)
 {
     concurrencyHandler.syncUsers(users, currentUser, messageBuffer);
     User& friendUser = getUser(_friend);
-    cout << "FRIEND'S NAME: " + friendUser.getName() << endl;
+    //cout << "FRIEND'S NAME: " + friendUser.getName() << endl;
     if (friendUser.getName() == "") {
         return false;
     }
