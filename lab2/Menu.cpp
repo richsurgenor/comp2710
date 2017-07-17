@@ -7,7 +7,7 @@
 
 #include "Menu.h"
 
-Menu::Menu(MenuInteractionHandler& menuHandlerIn) : menuHandler(menuHandlerIn), userExit(false), loggedIn(true) {}
+Menu::Menu(MenuInteractionHandler& menuHandlerIn) : menuHandler(menuHandlerIn), userExit(false), entry(true) {}
 
 // Function:       UI
 // Description:    Invokes Menu User Interface
@@ -17,7 +17,7 @@ void Menu::UI()
     loginOption();
     do
     {
-        if (loggedIn) {
+        if (entry) {
                 displayBanner("Distributed War Eagle Chat System, " + menuHandler.getCurrentUserName());
         }
         else
@@ -25,7 +25,7 @@ void Menu::UI()
             cout << "\n=================================================================================================="
                     "======================\n";
         }
-        loggedIn = false;
+        entry=false;
         cout << "Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change"
                      " user (c), Quit (q)\n";
         selectOption();
@@ -39,11 +39,6 @@ void Menu::selectOption()
     char option;
     cout << "Enter option: ";
     cin >> option;
-
-    if (menuHandler.getCurrentUserName() == "" && (option == 'p' || option == 'w' || option == 'h' || option == 'f' || option == 't')) {
-        cout << "Please log in first." << endl;
-        return;
-    }
 
     switch(option)
     {
@@ -94,10 +89,8 @@ string Menu::promptUser(string prompt)
 void Menu::loginOption()
 {
     string name = promptUser("Please enter user name: ");
-    if (menuHandler.createUser(name)) {
-        loggedIn = true;
-    }
-    else { // user already exists
+    if (!menuHandler.createUser(name)) {
+        // user already exists
         menuHandler.setCurrentUser(&menuHandler.getUser(name));
     }
 }
@@ -106,11 +99,8 @@ void Menu::loginOption()
 // Description:     changeUser option in UI
 void Menu::changeUserOption()
 {
-    if (menuHandler.changeUser(promptUser("Please enter user name: ")))
+    if (!menuHandler.changeUser(promptUser("Please enter user name: ")))
     {
-        loggedIn = true;
-    }
-    else {
         cout << "Sorry, this user does not exist!\n";
     }
 }

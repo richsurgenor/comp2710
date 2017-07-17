@@ -18,7 +18,7 @@ class Menu {
 private:
     MenuInteractionHandler& menuHandler;
     bool userExit;
-    bool loggedIn;
+    bool entry;
     string promptUser(string);
 
 public:
