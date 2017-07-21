@@ -1,5 +1,6 @@
 //
 // Created by Rich on 7/13/2017.
+// ConcurrencyHandler.cpp -- Responsible for concurrency of system.
 //
 
 #include "ConcurrencyHandler.h"
@@ -23,17 +24,17 @@ void ConcurrencyHandler::findAndReplace(string& source, string const& find, stri
 int ConcurrencyHandler::getCurrentTimeStamp()
 {
     int timestamp = 0;
-    if (!doesFileExist("timestamp.txt"))
+    if (!doesFileExist("data/timestamp.txt"))
     {
         ofstream outStream;
-        outStream.open("timestamp.txt");
+        outStream.open("data/timestamp.txt");
         outStream << "-1" << endl;
         outStream.close();
         outStream.clear();
     }
 
     ifstream inStream;
-    inStream.open("timestamp.txt");
+    inStream.open("data/timestamp.txt");
     inStream >> timestamp;
     return timestamp;
 }
@@ -46,7 +47,7 @@ int ConcurrencyHandler::incrementTimeStamp()
     int timestamp = getCurrentTimeStamp();
     timestamp++;
     ofstream outStream;
-    outStream.open("timestamp.txt");
+    outStream.open("data/timestamp.txt");
     outStream << timestamp;
     return timestamp;
 }
@@ -75,7 +76,7 @@ bool ConcurrencyHandler::writeToFile(string filename, string toAppend, bool appe
 // Inputs:          reference to the users vector, a reference pointer to the current user, the reference to buffer
 void ConcurrencyHandler::syncUsers(vector<User> &users, User*& currentUserPtr, string& buffer)
 {
-    if (!doesFileExist("users.txt")) {
+    if (!doesFileExist("data/users.txt")) {
         return;
     }
     User currentUser = *currentUserPtr;
@@ -83,7 +84,7 @@ void ConcurrencyHandler::syncUsers(vector<User> &users, User*& currentUserPtr, s
     string currentUserName = currentUser.getName();
     vector<string> names;
     ifstream inStream;
-    inStream.open("users.txt");
+    inStream.open("data/users.txt");
     if (!inStream.fail()) // simply means no users have been created yet
     {
         int currentUserLoc = 0;
@@ -118,7 +119,7 @@ void ConcurrencyHandler::syncFriends(vector<User>& users)
 {
     for (User& user : users) {
         ifstream inStream;
-        inStream.open(user.getName() + ".Friends.txt"); // should always exist if we got this far
+        inStream.open("data/" + user.getName() + ".Friends.txt"); // should always exist if we got this far
         for (string line; getline(inStream, line);) {
             user.addFriend(line);
         }
@@ -133,7 +134,7 @@ void ConcurrencyHandler::syncHashtags(vector<User>& users)
 {
     for (User& user : users) {
         ifstream inStream;
-        inStream.open(user.getName() + ".Hashtags.txt"); // should always exist if we got this far
+        inStream.open("data/" + user.getName() + ".Hashtags.txt"); // should always exist if we got this far
         for (string line; getline(inStream, line);) {
             user.followHashTag(line);
         }
@@ -152,7 +153,7 @@ void ConcurrencyHandler::syncPosts(vector<User>& users)
         string timestamp;
         string message;
         ifstream inStream;
-        inStream.open(user.getName() + ".txt"); // should always exist if we got this far
+        inStream.open("data/" + user.getName() + ".txt"); // should always exist if we got this far
         while (inStream >> next)
         {
 
@@ -162,7 +163,7 @@ void ConcurrencyHandler::syncPosts(vector<User>& users)
 
             if (messageReady)
             {
-                findAndReplace(message, "&&", "\n");
+                //findAndReplace(message, "&&", "\n");
                 posts[stoi(timestamp)] = "(*" + user.getName() + "*)" + message;
                 message = "";
                 timestamp = "";
@@ -178,7 +179,7 @@ void ConcurrencyHandler::syncPosts(vector<User>& users)
         }
         if (message != "")
         { // in case user had no posts
-            findAndReplace(message, "&&", "\n");
+            //findAndReplace(message, "&&", "\n");
             posts[stoi(timestamp)] = "(*" + user.getName() + "*)" + message; // record the last message
         }
     }

@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <dirent.h>
 #include "User.h"
 #include "WallPage.h"
 #include "HomePage.h"
@@ -43,6 +44,7 @@ class MenuInteractionHandler {
     void displayHomePage();
     void writeUser(string name);
     bool followHashtag(string hashtag);
+    string getBuffer();
 };
 
 #endif //LAB1_MENUINTERACTIONHANDLER_H

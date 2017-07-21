@@ -111,9 +111,10 @@ void MenuInteractionHandler::postMessage(string message)
     string header;
     header = "{#" + to_string(concurrencyHandler.incrementTimeStamp()) + "#}";
     string post = header + message;
-    concurrencyHandler.findAndReplace(post, "\n", "&&");
+    concurrencyHandler.findAndReplace(post, "\r\n", "&&");
+    //concurrencyHandler.findAndReplace(post, "\r", "&&");
 
-    concurrencyHandler.writeToFile(getCurrentUserName() + ".txt", post);
+    concurrencyHandler.writeToFile("data/" + getCurrentUserName() + ".txt", post);
 }
 
 // Function:        addFriend
@@ -131,7 +132,7 @@ bool MenuInteractionHandler::addFriend(string _friend)
     if (!currentUser->addFriend(friendUser.getName())) {
         return false;
     }
-    concurrencyHandler.writeToFile(currentUser->getName() + ".Friends.txt", _friend);
+    concurrencyHandler.writeToFile("data/" + currentUser->getName() + ".Friends.txt", _friend);
     return true;
 }
 
@@ -160,18 +161,23 @@ void MenuInteractionHandler::displayHomePage()
 void MenuInteractionHandler::writeUser(string name)
 {
     // read each text file in data directory that doesn't contain a period.
+
+    DIR* dir = opendir("data");
+    if (!dir) {
+        system("mkdir data");
+    }
     ofstream outStream;
 
-    outStream.open(name + ".txt");
+    outStream.open("data/" + name + ".txt");
     outStream.close();
     outStream.clear();
-    outStream.open(name + ".Friends.txt");
+    outStream.open("data/" + name + ".Friends.txt");
     outStream.close();
     outStream.clear();
-    outStream.open(name + ".Hashtags.txt");
+    outStream.open("data/" + name + ".Hashtags.txt");
     outStream.close();
     outStream.clear();
-    outStream.open("users.txt", ios::app);
+    outStream.open("data/users.txt", ios::app);
     outStream << name << endl;
 }
 
@@ -182,10 +188,18 @@ bool MenuInteractionHandler::followHashtag(string hashtag)
 {
     if (getCurrentUser()->followHashTag(hashtag))
     {
-        concurrencyHandler.writeToFile(currentUser->getName() + ".Hashtags.txt", hashtag);
+        concurrencyHandler.writeToFile("data/" + currentUser->getName() + ".Hashtags.txt", hashtag);
         return true;
     }
     return false;
+}
+
+// Function:        getBuffer
+// Description:     Return buffer of user messages
+// Outputs:         buffer of messages
+string MenuInteractionHandler::getBuffer()
+{
+    return messageBuffer;
 }
 
 
