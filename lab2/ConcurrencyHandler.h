@@ -40,6 +40,10 @@ public:
     void syncPosts(vector<User>&);
 
     void createBuffer(string& buffer);
+
+    static char toLower(char in);
+
+    static bool equalsIgnoreCase(string, string);
 };
 
 

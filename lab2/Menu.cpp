@@ -18,7 +18,7 @@ void Menu::UI()
     do
     {
         if (entry) {
-                displayBanner("Distributed War Eagle Chat System, " + menuHandler.getCurrentUserName());
+                displayBanner("Welcome to Distributed War Eagle Chat System, " + menuHandler.getCurrentUserName());
         }
         else
         {

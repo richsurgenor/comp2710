@@ -39,7 +39,7 @@ bool MenuInteractionHandler::isUser(string name)
 {
     for (User &user : users)
     {
-        if (user.getName() == name)
+        if (ConcurrencyHandler::equalsIgnoreCase(user.getName(), name))
         {
             return true;
         }
@@ -71,7 +71,7 @@ User& MenuInteractionHandler::getUser(string name)
 {
     for (User &user : users)
     {
-        if (user.getName() == name)
+        if (ConcurrencyHandler::equalsIgnoreCase(user.getName(), name))
         {
             return user;
         }

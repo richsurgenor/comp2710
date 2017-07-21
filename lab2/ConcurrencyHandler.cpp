@@ -198,3 +198,19 @@ void ConcurrencyHandler::createBuffer(string& buffer)
         i++;
     }
 }
+
+char ConcurrencyHandler::toLower(char in){
+    if(in<='Z' && in>='A')
+        return in-('Z'-'z');
+    return in;
+}
+
+bool ConcurrencyHandler::equalsIgnoreCase(string cmp1, string cmp2)
+{
+    transform(cmp1.begin(), cmp1.end(), cmp1.begin(), ConcurrencyHandler::toLower);
+    transform(cmp2.begin(), cmp2.end(), cmp2.begin(), ConcurrencyHandler::toLower);
+
+    return cmp1 == cmp2;
+}
+
+
