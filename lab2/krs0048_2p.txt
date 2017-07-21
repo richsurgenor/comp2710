@@ -1,0 +1,633 @@
+SAMPLE RUN FROM HANDOUT:::
+
+Session 1:
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Bill
+============================================================
+|         Distributed War Eagle Chat System, Bill          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Hello there, everyone!
+Welcome to our new chat group.
+Feel free to post messages any time.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Amazing War Eagle Chat! #WarEagleChat
+Let's get this out quick.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Taking a slow cruise to the Bahamas, y'all!
+Will be back to civilization in 7 days.
+Keep you posted soon.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+
+
+Session 2:
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: tom
+============================================================
+|          Distributed War Eagle Chat System, tom          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: Bill
+============================================================
+|                        Added Bill                        |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Welcome to my new msg page!
+I'm new to this, so be gentle, no flame please.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Let me be your friend.
+It's fun.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Hiking the Rockies in 5 days!
+Can't wait to head for the mountains #endlessvacation.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: w
+============================================================
+|                     tom's Wall Page                      |
+============================================================
+Hiking the Rockies in 5 days!
+Can't wait to head for the mountains #endlessvacation.
+
+
+Let me be your friend.
+It's fun.
+
+
+                       More messages? (yes/no) : yes
+Welcome to my new msg page!
+I'm new to this, so be gentle, no flame please.
+
+
+============================================================
+|                  End of tom's Wall Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+
+
+Session 3:
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Jane
+============================================================
+|         Distributed War Eagle Chat System, Jane          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: tom
+============================================================
+|                        Added tom                         |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Summer is cool.
+Still trying to adjust to the semester drill.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: Great stuff.
+You need to try this.
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: We had a great time at the beach!
+Not to mention scuba diving and sailing #endlessvacation
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: t
+Enter hashtag topic: #WarEagleChat
+============================================================
+|                 Following #WarEagleChat                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: h
+============================================================
+|                     Jane's Home Page                     |
+============================================================
+Jane >
+We had a great time at the beach!
+Not to mention scuba diving and sailing #endlessvacation
+
+
+Jane >
+Great stuff.
+You need to try this.
+p
+
+
+
+                       More messages? (yes/no) : yes
+Jane >
+Summer is cool.
+Still trying to adjust to the semester drill.
+
+
+tom >
+Hiking the Rockies in 5 days!
+Can't wait to head for the mountains #endlessvacation.
+
+
+                       More messages? (yes/no) : yes
+tom >
+Let me be your friend.
+It's fun.
+
+
+tom >
+Welcome to my new msg page!
+I'm new to this, so be gentle, no flame please.
+
+
+                       More messages? (yes/no) : yes
+Bill >
+Amazing War Eagle Chat! #WarEagleChat
+Let's get this out quick.
+
+
+============================================================
+|                 End of Jane's Home Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+
+
+
+Session 4:
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Bill
+============================================================
+|         Distributed War Eagle Chat System, Bill          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: Jane
+============================================================
+|                        Added Jane                        |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: I'm back to the daily grind.
+What's new here?
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: t
+Enter hashtag topic: #endlessvacation
+============================================================
+|                Following #endlessvacation                |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: h
+============================================================
+|                     Bill's Home Page                     |
+============================================================
+Bill >
+I'm back to the daily grind.
+What's new here?
+
+
+Jane >
+We had a great time at the beach!
+Not to mention scuba diving and sailing #endlessvacation
+
+
+                       More messages? (yes/no) : yes
+Jane >
+Great stuff.
+You need to try this.
+
+
+Jane >
+Summer is cool.
+Still trying to adjust to the semester drill.
+
+
+                       More messages? (yes/no) : yes
+tom >
+Hiking the Rockies in 5 days!
+Can't wait to head for the mountains #endlessvacation.
+
+
+Bill >
+Taking a slow cruise to the Bahamas, y'all!
+Will be back to civilization in 7 days.
+Keep you posted soon.
+
+
+                       More messages? (yes/no) : yes
+Bill >
+Amazing War Eagle Chat! #WarEagleChat
+Let's get this out quick.
+
+
+Bill >
+Hello there, everyone!
+Welcome to our new chat group.
+Feel free to post messages any time.
+
+
+============================================================
+|                 End of Bill's Home Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+
+
+
+
+
+
+SYSTEM TESTING:::::
+
+Order of System Test Cases:
+Test Case 1:Upon starting the program, check that a symmetrical banner displaying “Distrubted War Eagle Chat System!” is displayed.Test Case 2:Upon creating a user, check that a symmetrical banner displaying “Welcome to Distributed War Eagle Chat System, USERNAME!” is displayed.Test Case 3:Upon creating a user, check in the path that a text file with the user’s name has been created.Test Case 4:Upon posting, check that the user file contains the new post with the correct timestamp from the user.Test Case 5:Upon following a hashtag, check the file dedicated to each user’s hashtags contains the correct format and hashtag.Test Case 6:Upon adding a friend, check the file dedicated to keeping track of the user’s friends for correct format and friend name.Test Case 7:While using two computers at the same time, check when User1 posts a new message that it is automatically made available for User2.
+
+SYSTEM TESTING OUTPUT:
+
+Session 1 (tests cases 1-4):
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Rich
+============================================================
+|         Distributed War Eagle Chat System, Rich          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: testing messages!
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: test test
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+CONTENTS OF RICH.TXT:
+
+{#0#}testing messages!{#1#}test test
+
+
+Session 2 (tests case 6):
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Jake
+============================================================
+|         Distributed War Eagle Chat System, Jake          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: Rich
+============================================================
+|                        Added Rich                        |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: h
+============================================================
+|                     Jake's Home Page                     |
+============================================================
+Rich >
+test test
+
+
+Rich >
+testing messages!
+
+
+============================================================
+|                 End of Jake's Home Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: hey rich!
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: w
+============================================================
+|                     Jake's Wall Page                     |
+============================================================
+hey rich!
+
+
+============================================================
+|                 End of Jake's Wall Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+CONTENTS OF JAKE.FRIENDS.TXT:
+Rich
+
+Session 3 (Tests case 5):
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Angie
+============================================================
+|         Distributed War Eagle Chat System, Angie         |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: Rich
+============================================================
+|                        Added Rich                        |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: f
+Please enter friend's name: Jake
+============================================================
+|                        Added Jake                        |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: h
+============================================================
+|                    Angie's Home Page                     |
+============================================================
+Jake >
+hey rich!
+
+
+Rich >
+test test
+
+
+                       More messages? (yes/no) : yes
+Rich >
+testing messages!
+
+
+============================================================
+|                 End of Angie's Home Page                 |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+Session 4:
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Carter
+============================================================
+|        Distributed War Eagle Chat System, Carter         |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: p
+Enter message: hey everyone #wareagle
+#$
+============================================================
+|                    New message added                     |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+
+Session 5 (tests file network success):
+
+/Users/Rich/Desktop/comp2710/lab2/cmake-build-debug/lab2
+============================================================
+|            Distributed War Eagle Chat System!            |
+============================================================
+Please enter user name: Rich
+============================================================
+|         Distributed War Eagle Chat System, Rich          |
+============================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: t
+Enter hashtag topic: #wareagle
+============================================================
+|                   Following #wareagle                    |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: h
+============================================================
+|                     Rich's Home Page                     |
+============================================================
+Carter >
+hey everyone #wareagle
+
+
+Rich >
+test test
+
+
+                       More messages? (yes/no) : yes
+Rich >
+testing messages!
+
+
+============================================================
+|                 End of Rich's Home Page                  |
+============================================================
+
+========================================================================================================================
+Create new user(n), Post (p), Wall page (w), Home page (h), Add friend (f), Follow hashtag (t), Change user (c), Quit (q)
+Enter option: q
+============================================================
+|      Thank you for using the War Eagle Chat System       |
+============================================================
+
+Process finished with exit code 0
+
+CONTENTS OF RICH.HASHTAGS.TXT:
+#wareagle
+
+
+
+
+
+
+UNITTESTS:::::
+
+OUTPUT FROM TESTS.CPP: (All assert statements pass)
+
+Richs-MacBook-Pro:lab1 Rich$ ./a.out
+All tests completed successfully
+
+
+
+
+
+
+

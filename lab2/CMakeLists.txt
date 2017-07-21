@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         HomePage.cpp
         HomePage.h
-        krs0048_1.cpp
+        krs0048_2.cpp
         Menu.cpp
         Menu.h
         MenuInteractionHandler.cpp

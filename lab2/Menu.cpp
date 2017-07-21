@@ -89,6 +89,11 @@ string Menu::promptUser(string prompt)
 void Menu::loginOption()
 {
     string name = promptUser("Please enter user name: ");
+    if (name.find("/") != string::npos)
+    {
+        cout << "You cannot have a '/' in your name." << endl;
+        return;
+    }
     if (!menuHandler.createUser(name)) {
         // user already exists
         menuHandler.setCurrentUser(&menuHandler.getUser(name));
