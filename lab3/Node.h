@@ -1,6 +1,8 @@
 //
 // Created by Rich Surgenor on 7/26/17.
 //
+// Node.h -- A custom data type for use with the Maze Game.
+//
 
 #ifndef LAB3_NODE_H
 #define LAB3_NODE_H
@@ -12,8 +14,6 @@ using namespace std;
 class Node {
 
 public:
-    //Node();
-    //Node(string newname);
     void setNodeName(string newname);
     string getNodeName();
     void attachNewNode(Node* newNode, int direction);
