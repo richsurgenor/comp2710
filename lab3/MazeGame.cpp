@@ -112,6 +112,7 @@ void MazeGame::leave()
     {
         cout << node + " ";
     }
+    cout << endl;
     exit(0);
 }
 
